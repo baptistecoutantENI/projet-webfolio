@@ -1,0 +1,989 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio | Baptiste Coutant{% endblock %}
+
+{% block body %}
+
+    <style>
+
+        .hero-section {
+            background-image: url('{{ asset('img/fond3.jpg') }}') !important;
+        }
+
+        .table-nav {
+            width: 100%;
+            height: 80%;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .dot {
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .div-center {
+            margin-top: 50vh;
+            transform: translateY(-50%);
+        }
+
+
+        {# Tablet Landscape #}
+        @media screen and (max-width: 1200px) and (orientation: landscape) {
+        {# Global #}
+            .table-nav {
+                height: 74% !important;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .navbar-left {
+                background-color: #0e0426;
+                left: 0px !important;
+            }
+            .text-1-left, .text-2-left, .text-3-left {
+                font-size: 20px !important;
+            }
+
+            .navbar-right {
+                background-color: #0e0426;
+                right: 0px !important;
+            }
+            .text-1-right, .text-2-right, .text-3-right {
+                font-size: 20px !important;
+            }
+        }
+
+        {# Tablet Portrait #}
+        @media screen and (max-width: 1200px) and (orientation: portrait) {
+            {# Global #}
+            .table-nav {
+                height: 60% !important;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            {# Left #}
+            .navbar-left {
+                left: 0px !important;
+                background-color: #0e0426;
+            }
+            .text-1-left, .text-2-left, .text-3-left {
+                font-size: 22px !important;
+            }
+
+            {# Right #}
+            .navbar-right {
+                right: 0px !important;
+                background-color: #0e0426;
+            }
+            .text-1-right, .text-2-right, .text-3-right {
+                font-size: 22px !important;
+            }
+        }
+
+        {# Smartphone #}
+        @media screen and (max-width: 500px) {
+            {# Global #}
+            .table-nav {
+                height: 68% !important;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            {# Left #}
+            .navbar-left {
+                left: -20px !important;
+                background-color: #0e0426;
+            }
+            .text-1-left, .text-2-left, .text-3-left {
+                font-size: 18px !important;
+                opacity: 0.9 !important;
+                padding-right: 20px;
+            }
+            .text-1-left :hover, .text-2-left :hover, .text-3-left :hover{
+                font-size: 18px !important;
+                opacity: 0.9 !important;
+                color: #BA55D3;
+            }
+
+            {# Right #}
+            .navbar-right {
+                right: -20px !important;
+                background-color: #0e0426;
+            }
+            .text-1-right, .text-2-right, .text-3-right {
+                font-size: 18px !important;
+                opacity: 0.9 !important;
+                padding-right: 20px;
+            }
+            .dot {
+                padding-right: 20px;
+            }
+
+            .text-1-right :hover, .text-2-right :hover, .text-3-right :hover{
+                font-size: 18px !important;
+                opacity: 0.9 !important;
+                color: #BA55D3;
+            }
+
+        }
+
+        {# Navbar-left #}
+        .navbar-left {
+            position: absolute;
+            vertical-align: middle;
+            height: 100%;
+            left: 5px;
+            top: 0%;
+            cursor: pointer;
+            z-index: 2;
+            -webkit-writing-mode: vertical-lr;
+            writing-mode: vertical-lr;
+            transition: all 200ms linear;
+            transform: rotate(180deg);
+        }
+        {# Text-left #}
+        .text-1-left, .text-2-left, .text-3-left {
+            text-align: center;
+            font-size: 30px;
+            line-height: 1;
+            opacity: 0.8;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+        {# Text-left hover #}
+        .text-1-left:hover, .text-2-left:hover, .text-3-left:hover {
+            opacity: 1 !important;
+            transition: all 200ms linear !important;
+            color: #BA55D3;
+        }
+
+        {# Navbar-right #}
+        .navbar-right {
+            position: absolute;
+            vertical-align: middle;
+            height: 100%;
+            margin-top: auto;
+            margin-bottom: auto;
+            right: 5px;
+            top: 0%;
+            cursor: pointer;
+            z-index: 2;
+            -webkit-writing-mode: vertical-lr;
+            writing-mode: vertical-lr;
+            transition: all 200ms linear;
+            transform: rotate(360deg);
+        }
+        {# Text-right #}
+        .text-1-right, .text-2-right, .text-3-right {
+            text-align: center;
+            font-size: 30px;
+            line-height: 1;
+            opacity: 0.8;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+        {# Text-right hover #}
+        .text-1-right:hover, .text-2-right:hover, .text-3-right:hover {
+            opacity: 1 !important;
+            transition: all 200ms linear !important;
+            color: #BA55D3;
+        }
+
+    </style>
+
+
+    <div class="hero-section">
+
+        <div class="navbar-left">
+            <table class="table-nav text-center">
+                <thead>
+                <tr>
+                    <th scope="col" class="hover-target text-3-left">Cursus Scolaire</th>
+                    <th scope="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bi bi-dot dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        </svg>
+                    </th>
+                    <th scope="col" class="hover-target text-2-left">Experiences</th>
+                    <th scope="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bi bi-dot dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        </svg>
+                    </th>
+                    <th scope="col" class="hover-target text-1-left">Projets</th>
+
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="navbar-right">
+            <table class="table-nav text-center">
+                <thead>
+                <tr>
+
+                    <th scope="col" class="hover-target text-3-right">Certificats</th>
+
+                    <th scope="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bi bi-dot dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        </svg>
+                    </th>
+
+                    <th scope="col" class="hover-target text-1-right">Réferences</th>
+
+                    <th scope="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
+                             class="bi bi-dot dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        </svg>
+                    </th>
+
+                    <th scope="col" class="hover-target text-2-right">Contact</th>
+
+                </tr>
+                </thead>
+            </table>
+        </div>
+
+        <style>
+            .first-title {
+                font-size: 100px;
+            }
+
+            .second-title {
+                font-size: calc(1.325rem + .9vw);
+            }
+
+            .img-title {
+                height: 512px;
+                width: 512px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+
+            {# Tablet Landscape #}
+            @media screen and (max-width: 1200px) and (orientation: landscape) {
+
+                .img-title {
+                    height: 300px !important;
+                    width: 300px !important;
+                }
+
+                .first-title {
+                    font-size: 65px !important;
+                }
+            }
+
+            {# Tablet Portrait #}
+            @media screen and (max-width: 1200px) and (orientation: portrait) {
+                .first-title {
+                    font-size: 50px !important;
+                }
+
+                .img-title {
+                    height: 350px !important;
+                    width: 350px !important;
+                }
+            }
+
+            {# Smartphone #}
+            @media screen and (max-width: 500px) {
+                .img-title {
+                    height: 220px !important;
+                    width: 220px !important;
+                }
+
+                .first-title {
+                    font-size: 26px !important;
+                }
+                .second-title {
+                    font-size: 17px !important;
+                }
+                .btn-mobile {
+                    display: none !important;
+                }
+            }
+
+        </style>
+
+        <div class="section-center " style="width: 100%; height: 100%; top: 0%;" data-tilt data-tilt-reset="false" data-tilt-max="12" data-tilt-reverse="true">
+            <div class="container-fluid">
+                <div class="row justify-content-center div-center">
+                    <img src="{{ asset('img/profil/1024x1024.jpg') }}" class="img-fluid rounded-circle img-title" style="height: 512px; width: 512px; padding-left: 0px; padding-right: 0px;">
+                    <div style="margin-bottom: 30px;"></div>
+                    <h1 class="text-center first-title" style="font-size: 100px;">Baptiste Coutant</h1>
+                    <div style="margin-bottom: 10px;"></div>
+                    {# <h2 class="text-center">Développeur Full Stack | Autodidacte</h2> #}
+
+                    <h2>
+                        <h2 href="" class="typewrite text-center second-title" data-period="2000" data-type='[ "Développeur Full Stack", "Symfony | React | Flutter..." ]'>
+                            <span class="wrap"></span>
+                        </h2>
+                    </h2>
+
+                    <div style="margin-bottom: 40px;"></div>
+
+                    <div class="text-center">
+                            <button class="btn btn-light wildlife" style="margin-left: auto; text-align: right;">Voir ma vidéo</button>&nbsp;&nbsp;<button class="btn btn-light btn-mobile" style="text-align: right">Télécharger mon CV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        .projets-section img {
+            border-radius: 5px !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .experiences-section img {
+            border-radius: 5px !important;
+            width: unset !important;
+            height: unset !important;
+            box-shadow: none;
+        }
+
+        .cursus-section img {
+            border-radius: 5px !important;
+            width: unset !important;
+            height: unset !important;
+            box-shadow: none;
+        #}
+
+
+</style>
+
+    <div class="projets-section" style="overflow-x: hidden; overflow-y: visible;">
+        <div class="projets-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Mes Projets</h1>
+                    <div style="margin-bottom: 40px"></div>
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="color: black"><b>Facturolis</b></h5>
+                                        <p class="text-center" style="color: black">Symfony 6 | MongoDB | API Platform</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="color: black">RV-Piscines</h5>
+                                        <p class="text-center" style="color: black">Php native | MySQL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center" style="color: black">Futurolodge</h5>
+                                        <p class="text-center" style="color: black">Wordpress | Thème enfant | Plugin</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .section-center {
+            padding-top: 17px !important;
+            top: unset !important;
+            transform: unset !important;
+        }
+
+        .badge {
+            font-size: 14px;
+            margin: 4px;
+            background-color: #102770 !important;
+        }
+
+        .btn-primary {
+            background-color: #102770 !important;
+            border-color: #102770 !important;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <div class="experiences-section" style="overflow-y: visible;">
+        <div class="experiences-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Mes Expériences</h1>
+                    <div style="margin-bottom: 40px"></div>
+                    <div class="row">
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logomaven-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>Agence MAVEN</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Contrat en alternance (CDA) | Septembre 2021 à Septembre 2023 (2 ans)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Concepteur Développeur d'Application (ENI ECOLE)</p>
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Symfony</span>
+                                                    <span class="badge text-bg-primary">Flutter</span>
+                                                    <span class="badge text-bg-primary" >Xamarin</span>
+                                                    <span class="badge text-bg-primary" >React</span>
+                                                    <span class="badge text-bg-primary" >Administration Serveur</span>
+                                                    <span class="badge text-bg-primary" >Java</span>
+                                                    <span class="badge text-bg-primary" >Wordpress</span>
+                                                    <span class="badge text-bg-primary" >API Platforme</span>
+                                                    <span class="badge text-bg-primary" >Mariadb</span>
+                                                    <span class="badge text-bg-primary" >Mongodb</span>
+                                                    <span class="badge text-bg-primary" >Firebase</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Stage (BTS SNIR) | Octobre 2020 à Novembre 2020 (2 mois)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Système Numérique Informatique & Réseau (LP2I)</p>
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">Script Bash</span>
+                                                    <span class="badge text-bg-primary" >Apache Guacamole</span>
+                                                    <span class="badge text-bg-primary" >Adressage IP</span>
+                                                    <span class="badge text-bg-primary" >PfSense</span>
+                                                    <span class="badge text-bg-primary" >Serveur Centos 8</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Stage (BTS SNIR) | Mars 2019 à Avril 2019 (2 mois)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Système Numérique Informatique & Réseau (LP2I)</p>
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">MDT</span>
+                                                    <span class="badge text-bg-primary" >Bitlocker</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center" style="color: black">Stage (Bac Pro SN) | Novembre 2018 à Décembre 2018 (2 mois)</p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
+
+                                                <br>
+
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">MDT</span>
+                                                    <span class="badge text-bg-primary" >Serveur Messagerie</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logocned-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>CNED</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Juin 2018 à Juillet 2018 (2 mois)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
+
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">Maintenance Windows Server 2012 R2</span>
+                                                    <span class="badge text-bg-primary" >Serveur DHCP</span>
+                                                    <span class="badge text-bg-primary" >Serveur DNS</span>
+                                                    <span class="badge text-bg-primary" >Serveur Active Directory</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 col-sm-4">
+                                            <img src="{{ asset('img/experiences/logocned-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>CNED</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Janvier 2018 à Février 2018 (2 mois)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">Gestion de parc</span>
+                                                    <span class="badge text-bg-primary" >Inventaire</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('img/experiences/logoih2ef-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>IH2EF</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Juin 2017 à Juillet 2017 (2 mois)</b></p>
+                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela, 86)</p>
+                                                <br>
+                                                <div class="text-center">
+                                                    <span class="badge text-bg-primary" >Maintenance informatique</span>
+                                                    <span class="badge text-bg-primary">Gestion de parc</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 110px;"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="cursus-section" style="overflow-x: hidden; overflow-y: visible;">
+        <div class="cursus-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Mon cursus</h1>
+                    <div style="margin-bottom: 40px"></div>
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset('img/cursus/logoeni-portfolio.jpg') }}" class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="col-md-8 col-sm-8">
+                                            <div class="card-body">
+                                                <h2 class="card-title text-center" style="color: black"><b>ENI ECOLE</b></h2>
+                                                <p class="card-text text-center" style="color: black"><b>Bac+4 : Concepteur Développeur d'Applications | Septembre 2021 à Août 2021 (2 ans)</b></p>
+                                                <p class="card-text text-center" style="color: black">Alternance : Agence Maven</p>
+                                                <br>
+                                                <div class="text-center">
+                                                <a type="button" role="button" class="btn btn-primary" href="https://www.eni-ecole.fr/wp-content/uploads/2021/09/Fiche-formation_Concepteur-Developpeur-d-Applications.pdf" target="_blank">Détail de la formation</a>
+                                                <a type="button" role="button" class="btn btn-primary" href="https://www.eni-ecole.fr/" target="_blank">Site de l'école</a>
+                                                <a type="button" role="button" class="btn btn-primary" href="https://agence-maven.fr/" target="_blank">Site de l'entreprise</a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12 col-md-12 col-sm-12">
+                                <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+
+                                    <div class="card mb-3">
+                                        <div class="row g-0">
+                                            <div class="col-xl-4 col-md-4">
+                                                <img src="{{ asset('img/cursus/logolp2i-portfolio.jpg') }}" class="img-fluid" alt="...">
+                                            </div>
+                                            <div class="col-xl-8 col-md-8 col-sm-12">
+                                                <div class="card-body">
+                                                    <h2 class="card-title text-center" style="color: black"><b>Lycée Pilote Innovant International</b></h2>
+                                                    <p class="card-text text-center" style="color: black"><b>Bac+2 : Systèmes Numériques Informatique & Réseaux | Septembre 2019 à Août 2021 (2 ans)</b></p>
+                                                    <br>
+                                                    <div class="text-center">
+                                                        <a type="button" role="button" class="btn btn-primary" href="https://jean-rostand.enthdf.fr/wp-content/uploads/2020/02/LD-BTS-Snir-2020.pdf" target="_blank">Détail de la formation</a>
+                                                        <a type="button" role="button" class="btn btn-primary" href="https://lp2i-poitiers.fr/" target="_blank">Site de l'école</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="certificats-section">
+        <div class="certificats-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="references-section">
+        <div class="references-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-close hover-target"></div>
+        <div class="section-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <a href="#" class="hover-target">arete@photography.com</a>
+                    </div>
+                    <div class="col-12 text-center social mt-4">
+                        <a href="#" class="hover-target">instagram</a>
+                        <a href="#" class="hover-target">flickr</a>
+                        <a href="#" class="hover-target">facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wildlife-section">
+        <div class="wildlife-close hover-target"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h3>wildlife</h3>
+                </div>
+                <div class="col-12 mt-3 text-center">
+                    <p><span>Canon PowerShot S95</span></p>
+                </div>
+                <div class="col-12 text-center">
+                    <p>
+                        focal length: 22.5mm<br>
+                        aperture: ƒ/5.6<br>
+                        exposure time: 1/1000<br>
+                        ISO: 80
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div>
+
+    <!-- Link to page
+    ================================================== -->
+
+    <a href="https://fr.linkedin.com/in/baptiste-coutant-9b1544205" class="logo hover-target" target="_blank">
+        <img src="{{ asset('img/icon.png') }}" alt="" width="200" height="200">
+    </a>
+
+    <script>
+
+        (function ($) {
+            "use strict";
+
+            //Page cursors
+
+            document.getElementsByTagName("body")[0].addEventListener("mousemove", function (n) {
+                t.style.left = n.clientX + "px",
+                    t.style.top = n.clientY + "px",
+                    e.style.left = n.clientX + "px",
+                    e.style.top = n.clientY + "px",
+                    i.style.left = n.clientX + "px",
+                    i.style.top = n.clientY + "px"
+            });
+            var t = document.getElementById("cursor"),
+                e = document.getElementById("cursor2"),
+                i = document.getElementById("cursor3");
+
+            function n(t) {
+                e.classList.add("hover"), i.classList.add("hover")
+            }
+
+            function s(t) {
+                e.classList.remove("hover"), i.classList.remove("hover")
+            }
+
+            s();
+            for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+                o(r[a])
+            }
+
+            function o(t) {
+                t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+            }
+
+
+            //Projets
+            $(".text-1-left").on('click', function () {
+                $("body").addClass("projets-on");
+            });
+            $(".projets-close").on('click', function () {
+                $("body").removeClass("projets-on");
+            });
+
+            //Experiences
+            $(".text-2-left").on('click', function () {
+                $("body").addClass("experiences-on");
+            });
+            $(".experiences-close").on('click', function () {
+                $("body").removeClass("experiences-on");
+            });
+
+            //Cursus Scolaire
+            $(".text-3-left").on('click', function () {
+                $("body").addClass("cursus-on");
+            });
+            $(".cursus-close").on('click', function () {
+                $("body").removeClass("cursus-on");
+            });
+
+            //References
+            $(".text-1-right").on('click', function () {
+                $("body").addClass("references-on");
+            });
+            $(".references-close").on('click', function () {
+                $("body").removeClass("references-on");
+            });
+
+            //Contact
+            $(".text-2-right").on('click', function () {
+                $("body").addClass("contact-on");
+            });
+            $(".contact-close").on('click', function () {
+                $("body").removeClass("contact-on");
+            });
+
+            //Certificats
+            $(".text-3-right").on('click', function () {
+                $("body").addClass("certificats-on");
+            });
+            $(".certificats-close").on('click', function () {
+                $("body").removeClass("certificats-on");
+            });
+
+
+            //Wildlife portfolio page
+            $(".wildlife").on('click', function () {
+                $("body").addClass("wildlife-on");
+            });
+            $(".wildlife-close").on('click', function () {
+                $("body").removeClass("wildlife-on");
+            });
+
+        })(jQuery);
+    </script>
+
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    </script>
+
+    <script type="text/javascript" src="{{ asset('js/tilt.min.js') }}"></script>
+
+{% endblock %}
