@@ -27,6 +27,11 @@
             transform: translateY(-50%);
         }
 
+        .vertical-center {
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+
 
         {# Tablet Landscape #}
         @media screen and (max-width: 1200px) and (orientation: landscape) {
@@ -193,11 +198,173 @@
             color: #BA55D3;
         }
 
+        .first-title {
+            font-size: 100px;
+        }
+
+        .second-title {
+            font-size: calc(1.325rem + .9vw);
+        }
+
+        .img-title {
+            height: 512px;
+            width: 512px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        {# Tablet Landscape #}
+        @media screen and (max-width: 1200px) and (orientation: landscape) {
+
+            .img-title {
+                height: 300px !important;
+                width: 300px !important;
+            }
+
+            .first-title {
+                font-size: 65px !important;
+            }
+        }
+
+        {# Tablet Portrait #}
+        @media screen and (max-width: 1200px) and (orientation: portrait) {
+            .first-title {
+                font-size: 50px !important;
+            }
+
+            .img-title {
+                height: 350px !important;
+                width: 350px !important;
+            }
+        }
+
+        {# Smartphone #}
+        @media screen and (max-width: 500px) {
+            .img-title {
+                height: 220px !important;
+                width: 220px !important;
+            }
+
+            .first-title {
+                font-size: 26px !important;
+            }
+            .second-title {
+                font-size: 17px !important;
+            }
+            .btn-mobile {
+                display: none !important;
+            }
+        }
+
+        .projets-section img {
+            border-radius: 5px !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .experiences-section img {
+            border-radius: 5px !important;
+            width: unset !important;
+            height: unset !important;
+            box-shadow: none;
+        }
+
+        .cursus-section img {
+            border-radius: 5px !important;
+            width: unset !important;
+            height: unset !important;
+            box-shadow: none;
+        }
+        .section-center {
+            padding-top: 17px !important;
+            top: unset !important;
+        {#transform: unset !important;#}
+        }
+
+        .badge {
+            font-size: 14px;
+            margin: 4px;
+            background-color: #102770 !important;
+        }
+
+        .btn-primary {
+            background-color: #102770 !important;
+            border-color: #102770 !important;
+            margin-bottom: 5px;
+        }
+
+        .pdp {
+            height: 512px;
+            width: 512px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        p {
+            color: black;
+        }
+
+        h2 {
+            color: black;
+        }
+        h4 {
+            color: black;
+        }
+        h5 {
+            color: black;
+        }
+        .font-size-100{
+            font-size: 100px;
+        }
+        .text-align-right {
+            text-align: right;
+        }
+        .scroll-modal {
+            overflow-x: hidden; overflow-y: visible;
+        }
+        .transform-unset {
+            transform: unset !important;
+        }
+        .box-shadow-unset {
+            box-shadow: unset !important;
+        }
+
+        .margin-left-auto {
+            margin-left: auto !important;
+        }
+        .margin-right-auto {
+            margin-right: auto !important;
+        }
+        .margin-top-auto {
+            margin-top: auto !important;
+        }
+        .margin-bottom-auto {
+            margin-bottom: auto !important;
+        }
+
+        .margin-bottom-110 {
+            margin-bottom: 110px !important;
+        }
+        .margin-bottom-40 {
+            margin-bottom: 40px !important;
+        }
+        .margin-bottom-30 {
+            margin-bottom: 30px !important;
+        }
+        .margin-bottom-10 {
+            margin-bottom: 10px !important;
+        }
+
+        .width-100 {
+            width: 100% !important;
+        }
+        .height-100 {
+            height: 100% !important;
+        }
+
     </style>
 
-
     <div class="hero-section">
-
         <div class="navbar-left">
             <table class="table-nav text-center">
                 <thead>
@@ -217,250 +384,139 @@
                         </svg>
                     </th>
                     <th scope="col" class="hover-target text-1-left">Projets</th>
-
                 </tr>
                 </thead>
             </table>
         </div>
-
         <div class="navbar-right">
             <table class="table-nav text-center">
                 <thead>
                 <tr>
-
-                    <th scope="col" class="hover-target text-3-right">Certificats</th>
-
+                    <th scope="col" class="hover-target text-3-right">Certifications</th>
                     <th scope="col">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
                              class="bi bi-dot dot" viewBox="0 0 16 16">
                             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
                         </svg>
                     </th>
-
-                    <th scope="col" class="hover-target text-1-right">Réferences</th>
-
+                    <th scope="col" class="hover-target text-1-right">Compétences</th>
                     <th scope="col">
                         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor"
                              class="bi bi-dot dot" viewBox="0 0 16 16">
                             <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
                         </svg>
                     </th>
-
                     <th scope="col" class="hover-target text-2-right">Contact</th>
-
                 </tr>
                 </thead>
             </table>
         </div>
-
-        <style>
-            .first-title {
-                font-size: 100px;
-            }
-
-            .second-title {
-                font-size: calc(1.325rem + .9vw);
-            }
-
-            .img-title {
-                height: 512px;
-                width: 512px;
-                padding-left: 0px;
-                padding-right: 0px;
-            }
-
-            {# Tablet Landscape #}
-            @media screen and (max-width: 1200px) and (orientation: landscape) {
-
-                .img-title {
-                    height: 300px !important;
-                    width: 300px !important;
-                }
-
-                .first-title {
-                    font-size: 65px !important;
-                }
-            }
-
-            {# Tablet Portrait #}
-            @media screen and (max-width: 1200px) and (orientation: portrait) {
-                .first-title {
-                    font-size: 50px !important;
-                }
-
-                .img-title {
-                    height: 350px !important;
-                    width: 350px !important;
-                }
-            }
-
-            {# Smartphone #}
-            @media screen and (max-width: 500px) {
-                .img-title {
-                    height: 220px !important;
-                    width: 220px !important;
-                }
-
-                .first-title {
-                    font-size: 26px !important;
-                }
-                .second-title {
-                    font-size: 17px !important;
-                }
-                .btn-mobile {
-                    display: none !important;
-                }
-            }
-
-        </style>
-
-        <div class="section-center " style="width: 100%; height: 100%; top: 0%;" data-tilt data-tilt-reset="false" data-tilt-max="12" data-tilt-reverse="true">
+        <div class="section-center width-100 height-100 top-0" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="4" data-tilt-reset="false">
             <div class="container-fluid">
                 <div class="row justify-content-center div-center">
-                    <img src="{{ asset('img/profil/1024x1024.jpg') }}" class="img-fluid rounded-circle img-title" style="height: 512px; width: 512px; padding-left: 0px; padding-right: 0px;">
-                    <div style="margin-bottom: 30px;"></div>
-                    <h1 class="text-center first-title" style="font-size: 100px;">Baptiste Coutant</h1>
-                    <div style="margin-bottom: 10px;"></div>
-                    {# <h2 class="text-center">Développeur Full Stack | Autodidacte</h2> #}
-
+                    <img src="{{ asset('img/profil/1024x1024.jpg') }}" class="img-fluid rounded-circle img-title pdp">
+                    <div class="margin-bottom-30"></div>
+                    <h1 class="text-center first-title font-size-100">Baptiste Coutant</h1>
+                    <div class="margin-bottom-10"></div>
                     <h2>
-                        <h2 href="" class="typewrite text-center second-title" data-period="2000" data-type='[ "Développeur Full Stack", "Symfony | React | Flutter..." ]'>
+                        <h2 href="" class="typewrite text-center second-title text-white" data-period="2000" data-type='[ "Développeur Full Stack", "Symfony | React | Flutter..." ]'>
                             <span class="wrap"></span>
                         </h2>
                     </h2>
-
-                    <div style="margin-bottom: 40px;"></div>
-
+                    <div class="margin-bottom-40"></div>
                     <div class="text-center">
-                            <button class="btn btn-light wildlife" style="margin-left: auto; text-align: right;">Voir ma vidéo</button>&nbsp;&nbsp;<button class="btn btn-light btn-mobile" style="text-align: right">Télécharger mon CV</button>
+                            <button class="btn btn-light wildlife margin-left-auto text-align-right">Voir ma vidéo</button>&nbsp;&nbsp;<a role="button" type="button" href="{{ asset('pdf/Curriculum-Vitae-Baptiste-Coutant_update_compressed.pdf') }}" target="_blank" class="btn btn-light btn-mobile text-align-right">Voir mon CV</a>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
-    <style>
-        .projets-section img {
-            border-radius: 5px !important;
-            width: 100% !important;
-            height: 100% !important;
-        }
-
-        .experiences-section img {
-            border-radius: 5px !important;
-            width: unset !important;
-            height: unset !important;
-            box-shadow: none;
-        }
-
-        .cursus-section img {
-            border-radius: 5px !important;
-            width: unset !important;
-            height: unset !important;
-            box-shadow: none;
-        #}
-
-
-</style>
-
-    <div class="projets-section" style="overflow-x: hidden; overflow-y: visible;">
+    <div class="projets-section scroll-modal">
         <div class="projets-close hover-target"></div>
-        <div class="section-center">
+        <div class="section-center transform-unset">
             <div class="container">
                 <div class="row justify-content-center">
                     <h1 class="text-center">Mes Projets</h1>
-                    <div style="margin-bottom: 40px"></div>
+                    <div class="margin-bottom-40"></div>
                     <div class="row">
                         <div class="col-xl-6 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
-
                                 <div class="card mb-3">
-                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center" style="color: black"><b>Facturolis</b></h5>
-                                        <p class="text-center" style="color: black">Symfony 6 | MongoDB | API Platform</p>
-
+                                    <img src="{{ asset('img/projets/logofacturolis-portfolio.png') }}" class="card-img-top box-shadow-unset" alt="">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-center"><b>Facturolis</b></h5>
+                                        <p class="text-center">Symfony 6 | MongoDB | API Platform</p>
+                                        <p class="text-center">Backend (Gestion de client, mailing, création de facture et de devis)</p>
+                                        <a type="button" role="button" class="btn btn-primary" href="">En cours de maintenance</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
                                 <div class="card mb-3">
-                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center" style="color: black">RV-Piscines</h5>
-                                        <p class="text-center" style="color: black">Php native | MySQL</p>
+                                    <img src="{{ asset('img/projets/logorvpiscines-portfolio.png') }}" class="card-img-top box-shadow-unset" alt="">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-center"><b>RV-Piscines</b></h5>
+                                        <p class="text-center">Php native | MySQL</p>
+                                        <p class="text-center">Site vitrine + Backend (Gestion de client et suivi des interventions)</p>
+                                        <a type="button" role="button" class="btn btn-primary" href="https://rv-piscines.fr/index.html" target="_blank">Site vitrine</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-6 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
-
                                 <div class="card mb-3">
-                                    <img src="{{ asset('img/fond3.jpg') }}" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center" style="color: black">Futurolodge</h5>
-                                        <p class="text-center" style="color: black">Wordpress | Thème enfant | Plugin</p>
+                                    <img src="{{ asset('img/projets/logofuturolodge-portfolio.png') }}" class="card-img-top box-shadow-unset" alt="">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-center"><b>Futurolodge</b></h5>
+                                        <p class="text-center">Wordpress | Création de Plugin</p>
+                                        <p class="text-center">Site vitrine</p>
+                                        <a type="button" role="button" class="btn btn-primary text-center" href="https://futurolodge.com/" target="_blank">Site vitrine</a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
+                        <div class="margin-bottom-110"></div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
-    <style>
-        .section-center {
-            padding-top: 17px !important;
-            top: unset !important;
-            transform: unset !important;
-        }
-
-        .badge {
-            font-size: 14px;
-            margin: 4px;
-            background-color: #102770 !important;
-        }
-
-        .btn-primary {
-            background-color: #102770 !important;
-            border-color: #102770 !important;
-            margin-bottom: 5px;
-        }
-    </style>
-
-    <div class="experiences-section" style="overflow-y: visible;">
+    <div class="experiences-section scroll-modal">
         <div class="experiences-close hover-target"></div>
-        <div class="section-center">
+        <div class="section-center transform-unset">
             <div class="container">
                 <div class="row justify-content-center">
                     <h1 class="text-center">Mes Expériences</h1>
-                    <div style="margin-bottom: 40px"></div>
+                    <div class="margin-bottom-40"></div>
                     <div class="row">
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
-                                            <img src="{{ asset('img/experiences/logomaven-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
+                                            <img src="{{ asset('img/experiences/logomaven-portfolio.jpg') }}" class="img-fluid rounded-start">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>Agence MAVEN</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Contrat en alternance (CDA) | Septembre 2021 à Septembre 2023 (2 ans)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Concepteur Développeur d'Application (ENI ECOLE)</p>
+                                                <h2 class="card-title text-center text-black"><b>Agence MAVEN</b></h2>
+                                                <p class="card-text text-center text-black"><b>Septembre 2021 à Septembre 2023 (2 ans)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus : </b>Concepteur Développeur d'Application</p>
+                                                <p class="card-text text-center text-black"><b>Poste : </b>Alternant Concepteur Développeur d'Application</p>
+                                                <br>
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Conception et réalisation d'un marketplace d'animation en Symfony 6
+                                                    <br>
+                                                    • Conception et réalisation d'une application mobile Flutter
+                                                    <br>
+                                                    • Réalisation d'un réseau d'entreprise (Routeurs, NAS, VMs)
+                                                    <br>
+                                                    • Méthode SCRUM Agile, Github Workflow
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Symfony</span>
@@ -475,27 +531,34 @@
                                                     <span class="badge text-bg-primary" >Mongodb</span>
                                                     <span class="badge text-bg-primary" >Firebase</span>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
-                                            <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
+                                            <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Stage (BTS SNIR) | Octobre 2020 à Novembre 2020 (2 mois)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Système Numérique Informatique & Réseau (LP2I)</p>
+                                                <h2 class="card-title text-center text-black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center text-black"><b>Octobre 2020 à Novembre 2020 (2 mois)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> BTS Système Numérique Informatique & Réseaux</p>
+                                                <p class="card-text text-center text-black"><b>Poste :</b> Stagiaire Technicien Développeur & Réseaux</p>
+                                                <br>
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Création d'un script bash permettant l'installation de Apache Guacamole
+                                                    <br>
+                                                    • Configuration de PFSense, Centos 7, DMZ et VLAN
+                                                    <br>
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
@@ -511,20 +574,28 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
                                             <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Stage (BTS SNIR) | Mars 2019 à Avril 2019 (2 mois)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Système Numérique Informatique & Réseau (LP2I)</p>
+                                                <h2 class="card-title text-center text-black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center text-black"><b>Mars 2019 à Avril 2019 (2 mois)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> BTS Système Numérique Informatique & Réseaux</p>
+                                                <p class="card-text text-center text-black"><b>Poste :</b> Stagiaire Technicien Développeur & Réseaux</p>
+                                                <br>
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Mise en place de Bitlocker (TPM) sur une classe mobile
+                                                    <br>
+                                                    • Veille technologique
+                                                    <br>
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
@@ -537,23 +608,27 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
                                             <img src="{{ asset('img/experiences/logoensma-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>ENSMA</b></h2>
-                                                <p class="card-text text-center" style="color: black">Stage (Bac Pro SN) | Novembre 2018 à Décembre 2018 (2 mois)</p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
-
+                                                <h2 class="card-title text-center text-black"><b>ENSMA</b></h2>
+                                                <p class="card-text text-center text-black">Novembre 2018 à Décembre 2018 (2 mois)</p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> Bac Pro Système Numérique (Nelson Mandela)</p>
+                                                <p class="card-text text-center text-black"><b>Poste :</b> Stagiaire Technicien Réseaux</p>
                                                 <br>
-
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Configuration d'un Windows Server 2012 R2 (DNS, DHCP, MDT)
+                                                    <br>
+                                                </div>
+                                                <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
                                                     <span class="badge text-bg-primary">MDT</span>
@@ -565,21 +640,26 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
                                             <img src="{{ asset('img/experiences/logocned-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>CNED</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Juin 2018 à Juillet 2018 (2 mois)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
-
+                                                <h2 class="card-title text-center text-black"><b>CNED</b></h2>
+                                                <p class="card-text text-center text-black"><b>Juin 2018 à Juillet 2018 (2 mois)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> Bac Pro Système Numérique (Nelson Mandela)</p>
+                                                <p class="card-text text-center text-black"><b>Poste :</b> Stagiaire Technicien Réseaux</p>
+                                                <br>
+                                                <div class="text-black" >
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Maintenance informatique et gestion de parc
+                                                    <br>
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
@@ -594,20 +674,26 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
                                             <img src="{{ asset('img/experiences/logocned-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>CNED</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Janvier 2018 à Février 2018 (2 mois)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela)</p>
+                                                <h2 class="card-title text-center text-black"><b>CNED</b></h2>
+                                                <p class="card-text text-center text-black"><b>Janvier 2018 à Février 2018 (2 mois)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> Bac Pro Système Numérique (Nelson Mandela)</p>
+                                                <p class="card-text text-centertext-black"><b>Poste :</b> Stagiaire Technicien Réseaux</p>
+                                                <br>
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Maintenance informatique
+                                                    <br>
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
@@ -620,20 +706,26 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4">
+                                        <div class="col-xl-4 col-md-12 col-sm-4 vertical-center">
                                             <img src="{{ asset('img/experiences/logoih2ef-portfolio.jpg') }}" class="img-fluid rounded-start" alt="...">
                                         </div>
-                                        <div class="col-md-8 col-sm-8">
+                                        <div class="col-xl-8 col-md-12 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>IH2EF</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Stage (Bac Pro SN) | Juin 2017 à Juillet 2017 (2 mois)</b></p>
-                                                <p class="card-text text-center" style="color: black">Cursus : Bac Pro Système Numérique (Nelson Mandela, 86)</p>
+                                                <h2 class="card-title text-center text-black"><b>IH2EF</b></h2>
+                                                <p class="card-text text-center text-black"><b>Juin 2017 à Juillet 2017 (2 mois)</b></p>
+                                                <p class="card-text text-center text-black"><b>Cursus :</b> Bac Pro Système Numérique (Nelson Mandela, 86)</p>
+                                                <p class="card-text text-center text-black"><b>Poste :</b> Stagiaire Technicien Réseaux</p>
+                                                <br>
+                                                <div class="text-black">
+                                                    <b>Tâches effectuées :</b>
+                                                    <br>
+                                                    • Maintenance informatique
+                                                    <br>
+                                                </div>
                                                 <br>
                                                 <div class="text-center">
                                                     <span class="badge text-bg-primary" >Maintenance informatique</span>
@@ -645,75 +737,149 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div style="margin-bottom: 110px;"></div>
-
+                        <div class="margin-bottom-110"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="cursus-section" style="overflow-x: hidden; overflow-y: visible;">
+    <div class="cursus-section scroll-modal">
         <div class="cursus-close hover-target"></div>
-        <div class="section-center">
+        <div class="section-center transform-unset">
             <div class="container">
                 <div class="row justify-content-center">
                     <h1 class="text-center">Mon cursus</h1>
-                    <div style="margin-bottom: 40px"></div>
+                    <div class="margin-bottom-40"></div>
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12">
                             <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                 <div class="card mb-3">
                                     <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="{{ asset('img/cursus/logoeni-portfolio.jpg') }}" class="img-fluid" alt="...">
+                                        <div class="col-xl-4 col-md-4 vertical-center">
+                                            <img src="{{ asset('img/cursus/logoeni-portfolio.jpg') }}" class="img-fluid">
                                         </div>
                                         <div class="col-md-8 col-sm-8">
                                             <div class="card-body">
-                                                <h2 class="card-title text-center" style="color: black"><b>ENI ECOLE</b></h2>
-                                                <p class="card-text text-center" style="color: black"><b>Bac+4 : Concepteur Développeur d'Applications | Septembre 2021 à Août 2021 (2 ans)</b></p>
-                                                <p class="card-text text-center" style="color: black">Alternance : Agence Maven</p>
+                                                <h2 class="card-title text-center text-black"><b>ENI ECOLE</b></h2>
+                                                <p class="card-text text-center text-black"><b>Bac+4 : Concepteur Développeur d'Applications</b></p>
+                                                <p class="card-text text-center text-black">Septembre 2021 à Août 2021 (2 ans)</p>
+
+                                                <p class="card-text text-center text-black">Alternance : Agence Maven</p>
                                                 <br>
                                                 <div class="text-center">
                                                 <a type="button" role="button" class="btn btn-primary" href="https://www.eni-ecole.fr/wp-content/uploads/2021/09/Fiche-formation_Concepteur-Developpeur-d-Applications.pdf" target="_blank">Détail de la formation</a>
                                                 <a type="button" role="button" class="btn btn-primary" href="https://www.eni-ecole.fr/" target="_blank">Site de l'école</a>
                                                 <a type="button" role="button" class="btn btn-primary" href="https://agence-maven.fr/" target="_blank">Site de l'entreprise</a>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-xl-12 col-md-12 col-sm-12">
                                 <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
-
                                     <div class="card mb-3">
                                         <div class="row g-0">
-                                            <div class="col-xl-4 col-md-4">
+                                            <div class="col-xl-4 col-md-4 vertical-center">
                                                 <img src="{{ asset('img/cursus/logolp2i-portfolio.jpg') }}" class="img-fluid" alt="...">
                                             </div>
                                             <div class="col-xl-8 col-md-8 col-sm-12">
                                                 <div class="card-body">
-                                                    <h2 class="card-title text-center" style="color: black"><b>Lycée Pilote Innovant International</b></h2>
-                                                    <p class="card-text text-center" style="color: black"><b>Bac+2 : Systèmes Numériques Informatique & Réseaux | Septembre 2019 à Août 2021 (2 ans)</b></p>
+                                                    <h2 class="card-title text-center text-black"><b>Lycée Pilote Innovant International</b></h2>
+                                                    <p class="card-text text-center text-black"><b>BTS : Systèmes Numériques Informatique & Réseaux</b></p>
+                                                    <p class="card-text text-center text-black">Septembre 2019 à Août 2021 (2 ans)</p>
+                                                    <p class="card-text text-center text-black">Diplôme : 14.08/20</p>
                                                     <br>
                                                     <div class="text-center">
                                                         <a type="button" role="button" class="btn btn-primary" href="https://jean-rostand.enthdf.fr/wp-content/uploads/2020/02/LD-BTS-Snir-2020.pdf" target="_blank">Détail de la formation</a>
                                                         <a type="button" role="button" class="btn btn-primary" href="https://lp2i-poitiers.fr/" target="_blank">Site de l'école</a>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="col-xl-12 col-md-12 col-sm-12">
+                                <div data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-max="3">
+                                    <div class="card mb-3">
+                                        <div class="row g-0">
+                                            <div class="col-xl-4 col-md-4 vertical-center">
+                                                <img src="{{ asset('img/cursus/logonelsonmandela-portfolio.jpg') }}" class="img-fluid" alt="...">
+                                            </div>
+                                            <div class="col-xl-8 col-md-8 col-sm-12">
+                                                <div class="card-body">
+                                                    <h2 class="card-title text-center text-black"><b>Nelson Mandela</b></h2>
+                                                    <p class="card-text text-center text-black"><b>Bac Pro : Systèmes Numériques</b></p>
+                                                    <p class="card-text text-center text-black">Septembre 2016 à Juillet 2019 (2 ans)</p>
+                                                    <p class="card-text text-center text-black">Diplôme : 15.54/20 (mention bien)</p>
+                                                    <br>
+                                                    <div class="text-center">
+                                                        <a type="button" role="button" class="btn btn-primary" href="https://etab.ac-poitiers.fr/lpo-nmandela-poitiers/" target="_blank">Site de l'école</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="certificats-section scroll-modal">
+        <div class="certificats-close hover-target"></div>
+        <div class="section-center transform-unset">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <h1 class="text-center">Certifications</h1>
+                    <div class="margin-bottom-40"></div>
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center text-black"><b>SymfonyCast</b></h2>
+                                        <br>
+                                        <div class="margin-top-auto margin-bottom-auto">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6 margin-top-auto margin-bottom-auto">
+                                                    <p class="text-center">
+                                                        <p class="text-black">Stimulus <span class="badge badge-sm text-bg-danger">Valide</span></p>
+                                                        <p class="text-black">Symfony 6 <span class="badge badge-sm text-bg-danger">Valide</span></p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center"><b>Cisco</b></h2>
+                                        <br>
+                                        <div class="margin-top-auto margin-bottom-auto">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6 margin-top-auto margin-bottom-auto">
+                                                    <p class="text-center text-black">
+                                                    <p><b>CCNA 3 <span class="badge badge-sm text-bg-danger">Expiré</span></b></p>
+                                                    <p><b>CCNA 2 <span class="badge badge-sm text-bg-danger">Expiré</span></b></p>
+                                                    <p><b>CCNA 1 <span class="badge badge-sm text-bg-danger">Expiré</span></b></p>
+                                                    <p><b>IT6 <span class="badge badge-sm text-bg-danger">Expiré</span></b></p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -721,21 +887,331 @@
         </div>
     </div>
 
-    <div class="certificats-section">
-        <div class="certificats-close hover-target"></div>
-        <div class="section-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="references-section">
+    <div class="references-section scroll-modal">
         <div class="references-close hover-target"></div>
-        <div class="section-center">
+        <div class="section-center transform-unset">
             <div class="container">
                 <div class="row justify-content-center">
+                    <h1 class="text-center">Compétences</h1>
+                    <div class="margin-bottom-40"></div>
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center text-black"><b>DÉVELOPPEMENT</b></h2>
+
+                                        <br>
+                                        <div class="margin-top-auto margin-bottom-auto">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6 margin-top-auto margin-bottom-auto">
+                                                    <p class="text-center text-black" style="margin-bottom: 0; margin-top: 0;">
+                                                        <b>Symfony / Symfony UX</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 80%; background-color: #102770;">80%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>React</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 65%; background-color: #102770;">65%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Angular</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 65%; background-color: #102770;">65%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Flutter</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 60%; background-color: #102770;">60%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Xamarin</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 60%; background-color: #102770;">60%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center" style="color: black"><b>RÉSEAUX</b></h2>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Serveur WEB</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 85%; background-color: #102770;">85%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Serveur DHCP</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 80%; background-color: #102770;">80%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Serveur DNS</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 75%; background-color: #102770;">75%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Proxmox</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 55%; background-color: #102770;">55%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>PFSense</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 50%; background-color: #102770;">50%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <br>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center" style="color: black"><b>DONNÉES</b></h2>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>MySQL</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 95%; background-color: #102770;">95%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>MongoDB</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 85%; background-color: #102770;">85%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>API Platform</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 80%; background-color: #102770;">80%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12 col-sm-12">
+                            <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" data-tilt-max="3">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-title text-center" style="color: black"><b>UX / UI</b></h2>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Balsamiq</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 100%; background-color: #102770;">100%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Photoshop</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 75%; background-color: #102770;">75%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="margin-top: auto; margin-bottom: auto;">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-md-5 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <p class="text-center" style="color: black; margin-bottom: 0; margin-top: 0;">
+                                                        <b>Figma</b>
+                                                    </p>
+                                                </div>
+                                                <div class="col-xl-7 col-md-7 col-sm-6" style="margin-top: auto; margin-bottom: auto;">
+                                                    <div class="progress" role="progressbar"
+                                                         aria-label="Example with label" aria-valuenow="25"
+                                                         aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 75%; background-color: #102770;">75%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -743,16 +1219,21 @@
 
     <div class="contact-section">
         <div class="contact-close hover-target"></div>
-        <div class="section-center">
+        <div class="section-center" style="transform: unset !important;">
             <div class="container">
                 <div class="row justify-content-center">
+
+                    <div style="margin-top: 20px;">
+                    </div>
+                    <img src="{{ asset('img/profil/1024x1024.jpg') }}" class="img-fluid rounded-circle img-title" style="height: 256px; width: 256px; padding-left: 0px; padding-right: 0px;">
+                    <div class="margin-bottom-30">
+                    </div>
                     <div class="col-12 text-center">
-                        <a href="#" class="hover-target">arete@photography.com</a>
+                        <a href="mailto:contact@baptiste-coutant.fr" class="hover-target">contact@baptiste-coutant.fr</a>
                     </div>
                     <div class="col-12 text-center social mt-4">
-                        <a href="#" class="hover-target">instagram</a>
-                        <a href="#" class="hover-target">flickr</a>
-                        <a href="#" class="hover-target">facebook</a>
+                        <a href="https://www.linkedin.com/in/baptiste-coutant-9b1544205/?originalSubdomain=fr" target="_blank" class="hover-target">Linkedin</a>
+                        <a href="https://github.com/BaptisteCOUTANT" target="_blank" class="hover-target">Github</a>
                     </div>
                 </div>
             </div>
@@ -764,54 +1245,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
-                    <h3>wildlife</h3>
-                </div>
-                <div class="col-12 mt-3 text-center">
-                    <p><span>Canon PowerShot S95</span></p>
-                </div>
-                <div class="col-12 text-center">
-                    <p>
-                        focal length: 22.5mm<br>
-                        aperture: ƒ/5.6<br>
-                        exposure time: 1/1000<br>
-                        ISO: 80
-                    </p>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <img src="https://assets.codepen.io/1462889/photo-p.jpg" alt="">
+                    <h1>Vidéo</h1>
+                    <br>
+                    <iframe src="{{ asset('video/video.mp4') }}" allowfullscreen width="512" height="512"></iframe>
                 </div>
             </div>
         </div>
